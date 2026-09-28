@@ -1,0 +1,27 @@
+framework:
+  - terraform
+  - terraform_plan
+output:
+  - cli
+  - sarif
+  - junitxml
+output-file-path: "console,checkov-results.sarif,checkov-results.xml"
+compact: true
+quiet: true
+download-external-modules: false
+soft-fail-on:
+  - LOW
+  - MEDIUM
+hard-fail-on:
+  - HIGH
+  - CRITICAL
+skip-check:
+  - CKV_AWS_144 # cross-region replication — poza zakresem MVP
+
+# Uwaga (rozdz. 5.5.1 pracy): nazwy plików output-file-path powyżej mają
+# charakter domyślny. Poszczególne kroki workflow ci-security.yml jawnie
+# nadpisują ten parametr własnymi nazwami (checkov-source.sarif,
+# checkov-plan.sarif) dla każdego z dwóch przebiegów analizy, aby uniknąć
+# wzajemnego nadpisania wyników. Ten plik pełni rolę nośnika parametrów
+# wspólnych (soft-fail-on, hard-fail-on, skip-check), nie źródła prawdy
+# co do nazw plików wynikowych.

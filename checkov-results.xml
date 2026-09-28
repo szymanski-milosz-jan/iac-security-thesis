@@ -1,0 +1,929 @@
+<?xml version="1.0" ?>
+<testsuites disabled="0" errors="0" failures="41" tests="84" time="0.0">
+	<testsuite disabled="0" errors="0" failures="41" name="terraform scan" skipped="0" tests="84" time="0">
+		<properties>
+			<property name="directory" value="['vulnerable']"/>
+			<property name="add_check" value="False"/>
+			<property name="list" value="False"/>
+			<property name="output" value="['cli', 'sarif', 'junitxml']"/>
+			<property name="output_file_path" value="console,checkov-results.sarif,checkov-results.xml"/>
+			<property name="output_bc_ids" value="False"/>
+			<property name="include_all_checkov_policies" value="True"/>
+			<property name="quiet" value="True"/>
+			<property name="compact" value="True"/>
+			<property name="framework" value="['terraform']"/>
+			<property name="skip_framework" value="[]"/>
+			<property name="skip_check" value="['CKV_AWS_144']"/>
+			<property name="run_all_external_checks" value="False"/>
+			<property name="soft_fail" value="False"/>
+			<property name="soft_fail_on" value="['LOW', 'MEDIUM']"/>
+			<property name="hard_fail_on" value="['HIGH', 'CRITICAL']"/>
+			<property name="skip_results_upload" value="False"/>
+			<property name="repo_id" value="cli_repo/vulnerable"/>
+			<property name="branch" value="master"/>
+			<property name="skip_download" value="False"/>
+			<property name="use_enforcement_rules" value="False"/>
+			<property name="download_external_modules" value="False"/>
+			<property name="external_modules_download_path" value=".external_modules"/>
+			<property name="evaluate_variables" value="True"/>
+			<property name="no_cert_verify" value="False"/>
+			<property name="create_baseline" value="False"/>
+			<property name="output_baseline_as_skipped" value="False"/>
+			<property name="secrets_scan_file_type" value="[]"/>
+			<property name="enable_secret_scan_all_files" value="False"/>
+			<property name="block_list_secret_scan" value="[]"/>
+			<property name="summary_position" value="top"/>
+			<property name="skip_resources_without_violations" value="False"/>
+			<property name="deep_analysis" value="False"/>
+			<property name="no_fail_on_crash" value="False"/>
+			<property name="mask" value="defaultdict(&lt;class 'set'&gt;, {})"/>
+			<property name="scan_secrets_history" value="False"/>
+			<property name="secrets_history_timeout" value="12h"/>
+			<property name="custom_tool_name" value="Checkov"/>
+		</properties>
+		<testcase name="[NONE][CKV_AWS_211] Ensure RDS uses a modern CaCert" classname="/database.tf.aws_db_instance.app_db" file="/database.tf"/>
+		<testcase name="[NONE][CKV_AWS_133] Ensure that RDS instances has backup policy" classname="/database.tf.aws_db_instance.app_db" file="/database.tf"/>
+		<testcase name="[NONE][CKV_AWS_250] Ensure that RDS PostgreSQL instances use a non vulnerable version with the log_fdw extension (https://aws.amazon.com/security/security-bulletins/AWS-2022-004/)" classname="/database.tf.aws_db_instance.app_db" file="/database.tf"/>
+		<testcase name="[NONE][CKV_AWS_388] Ensure AWS Aurora PostgreSQL is not exposed to local file read vulnerability" classname="/database.tf.aws_db_instance.app_db" file="/database.tf"/>
+		<testcase name="[NONE][CKV_AWS_354] Ensure RDS Performance Insights are encrypted using KMS CMKs" classname="/database.tf.aws_db_instance.app_db" file="/database.tf"/>
+		<testcase name="[NONE][CKV_AWS_61] Ensure AWS IAM policy does not allow assume role permission across all services" classname="/iam.tf.aws_iam_role.app_role" file="/iam.tf"/>
+		<testcase name="[NONE][CKV_AWS_60] Ensure IAM role allows only specific services or principals to assume it" classname="/iam.tf.aws_iam_role.app_role" file="/iam.tf"/>
+		<testcase name="[NONE][CKV_AWS_274] Disallow IAM roles, users, and groups from using the AWS AdministratorAccess policy" classname="/iam.tf.aws_iam_role.app_role" file="/iam.tf"/>
+		<testcase name="[NONE][CKV_AWS_393] Ensure AWS GitHub Actions OIDC authorization policies only allow safe claims and claim order on IAM role" classname="/iam.tf.aws_iam_role.app_role" file="/iam.tf"/>
+		<testcase name="[NONE][CKV_AWS_260] Ensure no security groups allow ingress from 0.0.0.0:0 to port 80" classname="/network.tf.aws_security_group.app" file="/network.tf"/>
+		<testcase name="[NONE][CKV_AWS_277] Ensure no security groups allow ingress from 0.0.0.0:0 to port -1" classname="/network.tf.aws_security_group.app" file="/network.tf"/>
+		<testcase name="[NONE][CKV_AWS_61] Ensure AWS IAM policy does not allow assume role permission across all services" classname="/oidc.tf.aws_iam_role.tf_plan_role" file="/oidc.tf"/>
+		<testcase name="[NONE][CKV_AWS_60] Ensure IAM role allows only specific services or principals to assume it" classname="/oidc.tf.aws_iam_role.tf_plan_role" file="/oidc.tf"/>
+		<testcase name="[NONE][CKV_AWS_274] Disallow IAM roles, users, and groups from using the AWS AdministratorAccess policy" classname="/oidc.tf.aws_iam_role.tf_plan_role" file="/oidc.tf"/>
+		<testcase name="[NONE][CKV_AWS_393] Ensure AWS GitHub Actions OIDC authorization policies only allow safe claims and claim order on IAM role" classname="/oidc.tf.aws_iam_role.tf_plan_role" file="/oidc.tf"/>
+		<testcase name="[NONE][CKV_AWS_286] Ensure IAM policies does not allow privilege escalation" classname="/oidc.tf.aws_iam_role_policy.tf_plan_role_policy" file="/oidc.tf"/>
+		<testcase name="[NONE][CKV_AWS_290] Ensure IAM policies does not allow write access without constraints" classname="/oidc.tf.aws_iam_role_policy.tf_plan_role_policy" file="/oidc.tf"/>
+		<testcase name="[NONE][CKV_AWS_62] Ensure IAM policies that allow full &quot;*-*&quot; administrative privileges are not created" classname="/oidc.tf.aws_iam_role_policy.tf_plan_role_policy" file="/oidc.tf"/>
+		<testcase name="[NONE][CKV_AWS_289] Ensure IAM policies does not allow permissions management / resource exposure without constraints" classname="/oidc.tf.aws_iam_role_policy.tf_plan_role_policy" file="/oidc.tf"/>
+		<testcase name="[NONE][CKV_AWS_287] Ensure IAM policies does not allow credentials exposure" classname="/oidc.tf.aws_iam_role_policy.tf_plan_role_policy" file="/oidc.tf"/>
+		<testcase name="[NONE][CKV_AWS_63] Ensure no IAM policies documents allow &quot;*&quot; as a statement's actions" classname="/oidc.tf.aws_iam_role_policy.tf_plan_role_policy" file="/oidc.tf"/>
+		<testcase name="[NONE][CKV_AWS_61] Ensure AWS IAM policy does not allow assume role permission across all services" classname="/oidc.tf.aws_iam_role.tf_apply_role" file="/oidc.tf"/>
+		<testcase name="[NONE][CKV_AWS_60] Ensure IAM role allows only specific services or principals to assume it" classname="/oidc.tf.aws_iam_role.tf_apply_role" file="/oidc.tf"/>
+		<testcase name="[NONE][CKV_AWS_274] Disallow IAM roles, users, and groups from using the AWS AdministratorAccess policy" classname="/oidc.tf.aws_iam_role.tf_apply_role" file="/oidc.tf"/>
+		<testcase name="[NONE][CKV_AWS_393] Ensure AWS GitHub Actions OIDC authorization policies only allow safe claims and claim order on IAM role" classname="/oidc.tf.aws_iam_role.tf_apply_role" file="/oidc.tf"/>
+		<testcase name="[NONE][CKV_AWS_274] Disallow IAM roles, users, and groups from using the AWS AdministratorAccess policy" classname="/oidc.tf.aws_iam_role_policy_attachment.tf_apply_s3" file="/oidc.tf"/>
+		<testcase name="[NONE][CKV_AWS_274] Disallow IAM roles, users, and groups from using the AWS AdministratorAccess policy" classname="/oidc.tf.aws_iam_role_policy_attachment.tf_apply_ec2" file="/oidc.tf"/>
+		<testcase name="[NONE][CKV_AWS_274] Disallow IAM roles, users, and groups from using the AWS AdministratorAccess policy" classname="/oidc.tf.aws_iam_role_policy_attachment.tf_apply_iam" file="/oidc.tf"/>
+		<testcase name="[NONE][CKV_AWS_274] Disallow IAM roles, users, and groups from using the AWS AdministratorAccess policy" classname="/oidc.tf.aws_iam_role_policy_attachment.tf_apply_rds" file="/oidc.tf"/>
+		<testcase name="[NONE][CKV_AWS_93] Ensure S3 bucket policy does not lockout all but root user. (Prevent lockouts needing root account fixes)" classname="/s3.tf.aws_s3_bucket.app_data" file="/s3.tf"/>
+		<testcase name="[NONE][CKV_AWS_375] Ensure AWS S3 bucket does not have global view ACL permissions enabled" classname="/s3.tf.aws_s3_bucket_acl.app_data_acl" file="/s3.tf"/>
+		<testcase name="[NONE][CKV_AWS_41] Ensure no hard coded AWS access key and secret key exists in provider" classname="/versions.tf.aws.default" file="/versions.tf"/>
+		<testcase name="[NONE][CKV2_AWS_69] Ensure AWS RDS database instance configured with encryption in transit" classname="/database.tf.aws_db_instance.app_db" file="/database.tf"/>
+		<testcase name="[NONE][CKV2_AWS_43] Ensure S3 Bucket does not allow access to all Authenticated users" classname="/s3.tf.aws_s3_bucket_acl.app_data_acl" file="/s3.tf"/>
+		<testcase name="[NONE][CKV_AWS_19] Ensure all data stored in the S3 bucket is securely encrypted at rest" classname="/s3.tf.aws_s3_bucket.app_data" file="/s3.tf"/>
+		<testcase name="[NONE][CKV2_AWS_56] Ensure AWS Managed IAMFullAccess IAM policy is not used." classname="/iam.tf.aws_iam_role.app_role" file="/iam.tf"/>
+		<testcase name="[NONE][CKV2_AWS_56] Ensure AWS Managed IAMFullAccess IAM policy is not used." classname="/oidc.tf.aws_iam_role.tf_plan_role" file="/oidc.tf"/>
+		<testcase name="[NONE][CKV2_AWS_56] Ensure AWS Managed IAMFullAccess IAM policy is not used." classname="/oidc.tf.aws_iam_role.tf_apply_role" file="/oidc.tf"/>
+		<testcase name="[NONE][CKV2_AWS_56] Ensure AWS Managed IAMFullAccess IAM policy is not used." classname="/oidc.tf.aws_iam_role_policy_attachment.tf_apply_s3" file="/oidc.tf"/>
+		<testcase name="[NONE][CKV2_AWS_56] Ensure AWS Managed IAMFullAccess IAM policy is not used." classname="/oidc.tf.aws_iam_role_policy_attachment.tf_apply_ec2" file="/oidc.tf"/>
+		<testcase name="[NONE][CKV2_AWS_56] Ensure AWS Managed IAMFullAccess IAM policy is not used." classname="/oidc.tf.aws_iam_role_policy_attachment.tf_apply_rds" file="/oidc.tf"/>
+		<testcase name="[NONE][CKV_AWS_57] S3 Bucket has an ACL defined which allows public WRITE access." classname="/s3.tf.aws_s3_bucket.app_data" file="/s3.tf"/>
+		<testcase name="[NONE][CKV2_AWS_40] Ensure AWS IAM policy does not allow full IAM privileges" classname="/oidc.tf.aws_iam_role_policy.tf_plan_role_policy" file="/oidc.tf"/>
+		<testcase name="[NONE][CKV_AWS_16] Ensure all data stored in the RDS is securely encrypted at rest" classname="/database.tf.aws_db_instance.app_db" file="/database.tf">
+			<failure type="failure" message="Ensure all data stored in the RDS is securely encrypted at rest">
+Resource: aws_db_instance.app_db
+File: /database.tf: 13-26
+Guideline: None
+
+		13 | resource &quot;aws_db_instance&quot; &quot;app_db&quot; {
+		14 |   identifier        = &quot;app-db-prod&quot;
+		15 |   engine            = &quot;postgres&quot;
+		16 |   engine_version    = &quot;15.4&quot;
+		17 |   instance_class    = &quot;db.t3.micro&quot;
+		18 |   allocated_storage = 20
+		19 | 
+		20 |   username = &quot;dbadmin&quot;
+		21 |   password = var.db_password # celowo literal w oryginale pracy — patrz variables.tf
+		22 | 
+		23 |   publicly_accessible = true
+		24 |   storage_encrypted   = false
+		25 |   skip_final_snapshot = true
+		26 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_293] Ensure that AWS database instances have deletion protection enabled" classname="/database.tf.aws_db_instance.app_db" file="/database.tf">
+			<failure type="failure" message="Ensure that AWS database instances have deletion protection enabled">
+Resource: aws_db_instance.app_db
+File: /database.tf: 13-26
+Guideline: None
+
+		13 | resource &quot;aws_db_instance&quot; &quot;app_db&quot; {
+		14 |   identifier        = &quot;app-db-prod&quot;
+		15 |   engine            = &quot;postgres&quot;
+		16 |   engine_version    = &quot;15.4&quot;
+		17 |   instance_class    = &quot;db.t3.micro&quot;
+		18 |   allocated_storage = 20
+		19 | 
+		20 |   username = &quot;dbadmin&quot;
+		21 |   password = var.db_password # celowo literal w oryginale pracy — patrz variables.tf
+		22 | 
+		23 |   publicly_accessible = true
+		24 |   storage_encrypted   = false
+		25 |   skip_final_snapshot = true
+		26 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_17] Ensure all data stored in RDS is not publicly accessible" classname="/database.tf.aws_db_instance.app_db" file="/database.tf">
+			<failure type="failure" message="Ensure all data stored in RDS is not publicly accessible">
+Resource: aws_db_instance.app_db
+File: /database.tf: 13-26
+Guideline: None
+
+		13 | resource &quot;aws_db_instance&quot; &quot;app_db&quot; {
+		14 |   identifier        = &quot;app-db-prod&quot;
+		15 |   engine            = &quot;postgres&quot;
+		16 |   engine_version    = &quot;15.4&quot;
+		17 |   instance_class    = &quot;db.t3.micro&quot;
+		18 |   allocated_storage = 20
+		19 | 
+		20 |   username = &quot;dbadmin&quot;
+		21 |   password = var.db_password # celowo literal w oryginale pracy — patrz variables.tf
+		22 | 
+		23 |   publicly_accessible = true
+		24 |   storage_encrypted   = false
+		25 |   skip_final_snapshot = true
+		26 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_157] Ensure that RDS instances have Multi-AZ enabled" classname="/database.tf.aws_db_instance.app_db" file="/database.tf">
+			<failure type="failure" message="Ensure that RDS instances have Multi-AZ enabled">
+Resource: aws_db_instance.app_db
+File: /database.tf: 13-26
+Guideline: None
+
+		13 | resource &quot;aws_db_instance&quot; &quot;app_db&quot; {
+		14 |   identifier        = &quot;app-db-prod&quot;
+		15 |   engine            = &quot;postgres&quot;
+		16 |   engine_version    = &quot;15.4&quot;
+		17 |   instance_class    = &quot;db.t3.micro&quot;
+		18 |   allocated_storage = 20
+		19 | 
+		20 |   username = &quot;dbadmin&quot;
+		21 |   password = var.db_password # celowo literal w oryginale pracy — patrz variables.tf
+		22 | 
+		23 |   publicly_accessible = true
+		24 |   storage_encrypted   = false
+		25 |   skip_final_snapshot = true
+		26 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_353] Ensure that RDS instances have performance insights enabled" classname="/database.tf.aws_db_instance.app_db" file="/database.tf">
+			<failure type="failure" message="Ensure that RDS instances have performance insights enabled">
+Resource: aws_db_instance.app_db
+File: /database.tf: 13-26
+Guideline: None
+
+		13 | resource &quot;aws_db_instance&quot; &quot;app_db&quot; {
+		14 |   identifier        = &quot;app-db-prod&quot;
+		15 |   engine            = &quot;postgres&quot;
+		16 |   engine_version    = &quot;15.4&quot;
+		17 |   instance_class    = &quot;db.t3.micro&quot;
+		18 |   allocated_storage = 20
+		19 | 
+		20 |   username = &quot;dbadmin&quot;
+		21 |   password = var.db_password # celowo literal w oryginale pracy — patrz variables.tf
+		22 | 
+		23 |   publicly_accessible = true
+		24 |   storage_encrypted   = false
+		25 |   skip_final_snapshot = true
+		26 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_118] Ensure that enhanced monitoring is enabled for Amazon RDS instances" classname="/database.tf.aws_db_instance.app_db" file="/database.tf">
+			<failure type="failure" message="Ensure that enhanced monitoring is enabled for Amazon RDS instances">
+Resource: aws_db_instance.app_db
+File: /database.tf: 13-26
+Guideline: None
+
+		13 | resource &quot;aws_db_instance&quot; &quot;app_db&quot; {
+		14 |   identifier        = &quot;app-db-prod&quot;
+		15 |   engine            = &quot;postgres&quot;
+		16 |   engine_version    = &quot;15.4&quot;
+		17 |   instance_class    = &quot;db.t3.micro&quot;
+		18 |   allocated_storage = 20
+		19 | 
+		20 |   username = &quot;dbadmin&quot;
+		21 |   password = var.db_password # celowo literal w oryginale pracy — patrz variables.tf
+		22 | 
+		23 |   publicly_accessible = true
+		24 |   storage_encrypted   = false
+		25 |   skip_final_snapshot = true
+		26 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_226] Ensure DB instance gets all minor upgrades automatically" classname="/database.tf.aws_db_instance.app_db" file="/database.tf">
+			<failure type="failure" message="Ensure DB instance gets all minor upgrades automatically">
+Resource: aws_db_instance.app_db
+File: /database.tf: 13-26
+Guideline: None
+
+		13 | resource &quot;aws_db_instance&quot; &quot;app_db&quot; {
+		14 |   identifier        = &quot;app-db-prod&quot;
+		15 |   engine            = &quot;postgres&quot;
+		16 |   engine_version    = &quot;15.4&quot;
+		17 |   instance_class    = &quot;db.t3.micro&quot;
+		18 |   allocated_storage = 20
+		19 | 
+		20 |   username = &quot;dbadmin&quot;
+		21 |   password = var.db_password # celowo literal w oryginale pracy — patrz variables.tf
+		22 | 
+		23 |   publicly_accessible = true
+		24 |   storage_encrypted   = false
+		25 |   skip_final_snapshot = true
+		26 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_129] Ensure that respective logs of Amazon Relational Database Service (Amazon RDS) are enabled" classname="/database.tf.aws_db_instance.app_db" file="/database.tf">
+			<failure type="failure" message="Ensure that respective logs of Amazon Relational Database Service (Amazon RDS) are enabled">
+Resource: aws_db_instance.app_db
+File: /database.tf: 13-26
+Guideline: None
+
+		13 | resource &quot;aws_db_instance&quot; &quot;app_db&quot; {
+		14 |   identifier        = &quot;app-db-prod&quot;
+		15 |   engine            = &quot;postgres&quot;
+		16 |   engine_version    = &quot;15.4&quot;
+		17 |   instance_class    = &quot;db.t3.micro&quot;
+		18 |   allocated_storage = 20
+		19 | 
+		20 |   username = &quot;dbadmin&quot;
+		21 |   password = var.db_password # celowo literal w oryginale pracy — patrz variables.tf
+		22 | 
+		23 |   publicly_accessible = true
+		24 |   storage_encrypted   = false
+		25 |   skip_final_snapshot = true
+		26 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_161] Ensure RDS database has IAM authentication enabled" classname="/database.tf.aws_db_instance.app_db" file="/database.tf">
+			<failure type="failure" message="Ensure RDS database has IAM authentication enabled">
+Resource: aws_db_instance.app_db
+File: /database.tf: 13-26
+Guideline: None
+
+		13 | resource &quot;aws_db_instance&quot; &quot;app_db&quot; {
+		14 |   identifier        = &quot;app-db-prod&quot;
+		15 |   engine            = &quot;postgres&quot;
+		16 |   engine_version    = &quot;15.4&quot;
+		17 |   instance_class    = &quot;db.t3.micro&quot;
+		18 |   allocated_storage = 20
+		19 | 
+		20 |   username = &quot;dbadmin&quot;
+		21 |   password = var.db_password # celowo literal w oryginale pracy — patrz variables.tf
+		22 | 
+		23 |   publicly_accessible = true
+		24 |   storage_encrypted   = false
+		25 |   skip_final_snapshot = true
+		26 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_286] Ensure IAM policies does not allow privilege escalation" classname="/iam.tf.aws_iam_role_policy.app_role_policy" file="/iam.tf">
+			<failure type="failure" message="Ensure IAM policies does not allow privilege escalation">
+Resource: aws_iam_role_policy.app_role_policy
+File: /iam.tf: 29-41
+Guideline: None
+
+		29 | resource &quot;aws_iam_role_policy&quot; &quot;app_role_policy&quot; {
+		30 |   name = &quot;app-full-access&quot;
+		31 |   role = aws_iam_role.app_role.id
+		32 | 
+		33 |   policy = jsonencode({
+		34 |     Version = &quot;2012-10-17&quot;
+		35 |     Statement = [{
+		36 |       Effect   = &quot;Allow&quot;
+		37 |       Action   = &quot;*&quot;
+		38 |       Resource = &quot;*&quot;
+		39 |     }]
+		40 |   })
+		41 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_290] Ensure IAM policies does not allow write access without constraints" classname="/iam.tf.aws_iam_role_policy.app_role_policy" file="/iam.tf">
+			<failure type="failure" message="Ensure IAM policies does not allow write access without constraints">
+Resource: aws_iam_role_policy.app_role_policy
+File: /iam.tf: 29-41
+Guideline: None
+
+		29 | resource &quot;aws_iam_role_policy&quot; &quot;app_role_policy&quot; {
+		30 |   name = &quot;app-full-access&quot;
+		31 |   role = aws_iam_role.app_role.id
+		32 | 
+		33 |   policy = jsonencode({
+		34 |     Version = &quot;2012-10-17&quot;
+		35 |     Statement = [{
+		36 |       Effect   = &quot;Allow&quot;
+		37 |       Action   = &quot;*&quot;
+		38 |       Resource = &quot;*&quot;
+		39 |     }]
+		40 |   })
+		41 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_288] Ensure IAM policies does not allow data exfiltration" classname="/iam.tf.aws_iam_role_policy.app_role_policy" file="/iam.tf">
+			<failure type="failure" message="Ensure IAM policies does not allow data exfiltration">
+Resource: aws_iam_role_policy.app_role_policy
+File: /iam.tf: 29-41
+Guideline: None
+
+		29 | resource &quot;aws_iam_role_policy&quot; &quot;app_role_policy&quot; {
+		30 |   name = &quot;app-full-access&quot;
+		31 |   role = aws_iam_role.app_role.id
+		32 | 
+		33 |   policy = jsonencode({
+		34 |     Version = &quot;2012-10-17&quot;
+		35 |     Statement = [{
+		36 |       Effect   = &quot;Allow&quot;
+		37 |       Action   = &quot;*&quot;
+		38 |       Resource = &quot;*&quot;
+		39 |     }]
+		40 |   })
+		41 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_62] Ensure IAM policies that allow full &quot;*-*&quot; administrative privileges are not created" classname="/iam.tf.aws_iam_role_policy.app_role_policy" file="/iam.tf">
+			<failure type="failure" message="Ensure IAM policies that allow full &quot;*-*&quot; administrative privileges are not created">
+Resource: aws_iam_role_policy.app_role_policy
+File: /iam.tf: 29-41
+Guideline: None
+
+		29 | resource &quot;aws_iam_role_policy&quot; &quot;app_role_policy&quot; {
+		30 |   name = &quot;app-full-access&quot;
+		31 |   role = aws_iam_role.app_role.id
+		32 | 
+		33 |   policy = jsonencode({
+		34 |     Version = &quot;2012-10-17&quot;
+		35 |     Statement = [{
+		36 |       Effect   = &quot;Allow&quot;
+		37 |       Action   = &quot;*&quot;
+		38 |       Resource = &quot;*&quot;
+		39 |     }]
+		40 |   })
+		41 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_289] Ensure IAM policies does not allow permissions management / resource exposure without constraints" classname="/iam.tf.aws_iam_role_policy.app_role_policy" file="/iam.tf">
+			<failure type="failure" message="Ensure IAM policies does not allow permissions management / resource exposure without constraints">
+Resource: aws_iam_role_policy.app_role_policy
+File: /iam.tf: 29-41
+Guideline: None
+
+		29 | resource &quot;aws_iam_role_policy&quot; &quot;app_role_policy&quot; {
+		30 |   name = &quot;app-full-access&quot;
+		31 |   role = aws_iam_role.app_role.id
+		32 | 
+		33 |   policy = jsonencode({
+		34 |     Version = &quot;2012-10-17&quot;
+		35 |     Statement = [{
+		36 |       Effect   = &quot;Allow&quot;
+		37 |       Action   = &quot;*&quot;
+		38 |       Resource = &quot;*&quot;
+		39 |     }]
+		40 |   })
+		41 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_287] Ensure IAM policies does not allow credentials exposure" classname="/iam.tf.aws_iam_role_policy.app_role_policy" file="/iam.tf">
+			<failure type="failure" message="Ensure IAM policies does not allow credentials exposure">
+Resource: aws_iam_role_policy.app_role_policy
+File: /iam.tf: 29-41
+Guideline: None
+
+		29 | resource &quot;aws_iam_role_policy&quot; &quot;app_role_policy&quot; {
+		30 |   name = &quot;app-full-access&quot;
+		31 |   role = aws_iam_role.app_role.id
+		32 | 
+		33 |   policy = jsonencode({
+		34 |     Version = &quot;2012-10-17&quot;
+		35 |     Statement = [{
+		36 |       Effect   = &quot;Allow&quot;
+		37 |       Action   = &quot;*&quot;
+		38 |       Resource = &quot;*&quot;
+		39 |     }]
+		40 |   })
+		41 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_63] Ensure no IAM policies documents allow &quot;*&quot; as a statement's actions" classname="/iam.tf.aws_iam_role_policy.app_role_policy" file="/iam.tf">
+			<failure type="failure" message="Ensure no IAM policies documents allow &quot;*&quot; as a statement's actions">
+Resource: aws_iam_role_policy.app_role_policy
+File: /iam.tf: 29-41
+Guideline: None
+
+		29 | resource &quot;aws_iam_role_policy&quot; &quot;app_role_policy&quot; {
+		30 |   name = &quot;app-full-access&quot;
+		31 |   role = aws_iam_role.app_role.id
+		32 | 
+		33 |   policy = jsonencode({
+		34 |     Version = &quot;2012-10-17&quot;
+		35 |     Statement = [{
+		36 |       Effect   = &quot;Allow&quot;
+		37 |       Action   = &quot;*&quot;
+		38 |       Resource = &quot;*&quot;
+		39 |     }]
+		40 |   })
+		41 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_355] Ensure no IAM policies documents allow &quot;*&quot; as a statement's resource for restrictable actions" classname="/iam.tf.aws_iam_role_policy.app_role_policy" file="/iam.tf">
+			<failure type="failure" message="Ensure no IAM policies documents allow &quot;*&quot; as a statement's resource for restrictable actions">
+Resource: aws_iam_role_policy.app_role_policy
+File: /iam.tf: 29-41
+Guideline: None
+
+		29 | resource &quot;aws_iam_role_policy&quot; &quot;app_role_policy&quot; {
+		30 |   name = &quot;app-full-access&quot;
+		31 |   role = aws_iam_role.app_role.id
+		32 | 
+		33 |   policy = jsonencode({
+		34 |     Version = &quot;2012-10-17&quot;
+		35 |     Statement = [{
+		36 |       Effect   = &quot;Allow&quot;
+		37 |       Action   = &quot;*&quot;
+		38 |       Resource = &quot;*&quot;
+		39 |     }]
+		40 |   })
+		41 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_24] Ensure no security groups allow ingress from 0.0.0.0:0 to port 22" classname="/network.tf.aws_security_group.app" file="/network.tf">
+			<failure type="failure" message="Ensure no security groups allow ingress from 0.0.0.0:0 to port 22">
+Resource: aws_security_group.app
+File: /network.tf: 27-51
+Guideline: None
+
+		27 | resource &quot;aws_security_group&quot; &quot;app&quot; {
+		28 |   name   = &quot;app-sg&quot;
+		29 |   vpc_id = aws_vpc.main.id
+		30 | 
+		31 |   ingress {
+		32 |     from_port   = 22
+		33 |     to_port     = 22
+		34 |     protocol    = &quot;tcp&quot;
+		35 |     cidr_blocks = [&quot;0.0.0.0/0&quot;]
+		36 |   }
+		37 | 
+		38 |   ingress {
+		39 |     from_port   = 3389
+		40 |     to_port     = 3389
+		41 |     protocol    = &quot;tcp&quot;
+		42 |     cidr_blocks = [&quot;0.0.0.0/0&quot;]
+		43 |   }
+		44 | 
+		45 |   egress {
+		46 |     from_port   = 0
+		47 |     to_port     = 0
+		48 |     protocol    = &quot;-1&quot;
+		49 |     cidr_blocks = [&quot;0.0.0.0/0&quot;]
+		50 |   }
+		51 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_382] Ensure no security groups allow egress from 0.0.0.0:0 to port -1" classname="/network.tf.aws_security_group.app" file="/network.tf">
+			<failure type="failure" message="Ensure no security groups allow egress from 0.0.0.0:0 to port -1">
+Resource: aws_security_group.app
+File: /network.tf: 27-51
+Guideline: None
+
+		27 | resource &quot;aws_security_group&quot; &quot;app&quot; {
+		28 |   name   = &quot;app-sg&quot;
+		29 |   vpc_id = aws_vpc.main.id
+		30 | 
+		31 |   ingress {
+		32 |     from_port   = 22
+		33 |     to_port     = 22
+		34 |     protocol    = &quot;tcp&quot;
+		35 |     cidr_blocks = [&quot;0.0.0.0/0&quot;]
+		36 |   }
+		37 | 
+		38 |   ingress {
+		39 |     from_port   = 3389
+		40 |     to_port     = 3389
+		41 |     protocol    = &quot;tcp&quot;
+		42 |     cidr_blocks = [&quot;0.0.0.0/0&quot;]
+		43 |   }
+		44 | 
+		45 |   egress {
+		46 |     from_port   = 0
+		47 |     to_port     = 0
+		48 |     protocol    = &quot;-1&quot;
+		49 |     cidr_blocks = [&quot;0.0.0.0/0&quot;]
+		50 |   }
+		51 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_23] Ensure every security group and rule has a description" classname="/network.tf.aws_security_group.app" file="/network.tf">
+			<failure type="failure" message="Ensure every security group and rule has a description">
+Resource: aws_security_group.app
+File: /network.tf: 27-51
+Guideline: None
+
+		27 | resource &quot;aws_security_group&quot; &quot;app&quot; {
+		28 |   name   = &quot;app-sg&quot;
+		29 |   vpc_id = aws_vpc.main.id
+		30 | 
+		31 |   ingress {
+		32 |     from_port   = 22
+		33 |     to_port     = 22
+		34 |     protocol    = &quot;tcp&quot;
+		35 |     cidr_blocks = [&quot;0.0.0.0/0&quot;]
+		36 |   }
+		37 | 
+		38 |   ingress {
+		39 |     from_port   = 3389
+		40 |     to_port     = 3389
+		41 |     protocol    = &quot;tcp&quot;
+		42 |     cidr_blocks = [&quot;0.0.0.0/0&quot;]
+		43 |   }
+		44 | 
+		45 |   egress {
+		46 |     from_port   = 0
+		47 |     to_port     = 0
+		48 |     protocol    = &quot;-1&quot;
+		49 |     cidr_blocks = [&quot;0.0.0.0/0&quot;]
+		50 |   }
+		51 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_25] Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389" classname="/network.tf.aws_security_group.app" file="/network.tf">
+			<failure type="failure" message="Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389">
+Resource: aws_security_group.app
+File: /network.tf: 27-51
+Guideline: None
+
+		27 | resource &quot;aws_security_group&quot; &quot;app&quot; {
+		28 |   name   = &quot;app-sg&quot;
+		29 |   vpc_id = aws_vpc.main.id
+		30 | 
+		31 |   ingress {
+		32 |     from_port   = 22
+		33 |     to_port     = 22
+		34 |     protocol    = &quot;tcp&quot;
+		35 |     cidr_blocks = [&quot;0.0.0.0/0&quot;]
+		36 |   }
+		37 | 
+		38 |   ingress {
+		39 |     from_port   = 3389
+		40 |     to_port     = 3389
+		41 |     protocol    = &quot;tcp&quot;
+		42 |     cidr_blocks = [&quot;0.0.0.0/0&quot;]
+		43 |   }
+		44 | 
+		45 |   egress {
+		46 |     from_port   = 0
+		47 |     to_port     = 0
+		48 |     protocol    = &quot;-1&quot;
+		49 |     cidr_blocks = [&quot;0.0.0.0/0&quot;]
+		50 |   }
+		51 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_288] Ensure IAM policies does not allow data exfiltration" classname="/oidc.tf.aws_iam_role_policy.tf_plan_role_policy" file="/oidc.tf">
+			<failure type="failure" message="Ensure IAM policies does not allow data exfiltration">
+Resource: aws_iam_role_policy.tf_plan_role_policy
+File: /oidc.tf: 38-58
+Guideline: None
+
+		38 | resource &quot;aws_iam_role_policy&quot; &quot;tf_plan_role_policy&quot; {
+		39 |   name = &quot;tf-plan-readonly&quot;
+		40 |   role = aws_iam_role.tf_plan_role.id
+		41 | 
+		42 |   policy = jsonencode({
+		43 |     Version = &quot;2012-10-17&quot;
+		44 |     Statement = [{
+		45 |       Effect = &quot;Allow&quot;
+		46 |       Action = [
+		47 |         &quot;iam:Get*&quot;,
+		48 |         &quot;iam:List*&quot;,
+		49 |         &quot;s3:GetObject&quot;,
+		50 |         &quot;s3:ListBucket&quot;,
+		51 |         &quot;s3:GetBucket*&quot;,
+		52 |         &quot;ec2:Describe*&quot;,
+		53 |         &quot;rds:Describe*&quot;,
+		54 |       ]
+		55 |       Resource = &quot;*&quot;
+		56 |     }]
+		57 |   })
+		58 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_355] Ensure no IAM policies documents allow &quot;*&quot; as a statement's resource for restrictable actions" classname="/oidc.tf.aws_iam_role_policy.tf_plan_role_policy" file="/oidc.tf">
+			<failure type="failure" message="Ensure no IAM policies documents allow &quot;*&quot; as a statement's resource for restrictable actions">
+Resource: aws_iam_role_policy.tf_plan_role_policy
+File: /oidc.tf: 38-58
+Guideline: None
+
+		38 | resource &quot;aws_iam_role_policy&quot; &quot;tf_plan_role_policy&quot; {
+		39 |   name = &quot;tf-plan-readonly&quot;
+		40 |   role = aws_iam_role.tf_plan_role.id
+		41 | 
+		42 |   policy = jsonencode({
+		43 |     Version = &quot;2012-10-17&quot;
+		44 |     Statement = [{
+		45 |       Effect = &quot;Allow&quot;
+		46 |       Action = [
+		47 |         &quot;iam:Get*&quot;,
+		48 |         &quot;iam:List*&quot;,
+		49 |         &quot;s3:GetObject&quot;,
+		50 |         &quot;s3:ListBucket&quot;,
+		51 |         &quot;s3:GetBucket*&quot;,
+		52 |         &quot;ec2:Describe*&quot;,
+		53 |         &quot;rds:Describe*&quot;,
+		54 |       ]
+		55 |       Resource = &quot;*&quot;
+		56 |     }]
+		57 |   })
+		58 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_53] Ensure S3 bucket has block public ACLS enabled" classname="/s3.tf.aws_s3_bucket_public_access_block.app_data_pab" file="/s3.tf">
+			<failure type="failure" message="Ensure S3 bucket has block public ACLS enabled">
+Resource: aws_s3_bucket_public_access_block.app_data_pab
+File: /s3.tf: 23-30
+Guideline: None
+
+		23 | resource &quot;aws_s3_bucket_public_access_block&quot; &quot;app_data_pab&quot; {
+		24 |   bucket = aws_s3_bucket.app_data.id
+		25 | 
+		26 |   block_public_acls       = false
+		27 |   block_public_policy     = false
+		28 |   ignore_public_acls      = false
+		29 |   restrict_public_buckets = false
+		30 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_54] Ensure S3 bucket has block public policy enabled" classname="/s3.tf.aws_s3_bucket_public_access_block.app_data_pab" file="/s3.tf">
+			<failure type="failure" message="Ensure S3 bucket has block public policy enabled">
+Resource: aws_s3_bucket_public_access_block.app_data_pab
+File: /s3.tf: 23-30
+Guideline: None
+
+		23 | resource &quot;aws_s3_bucket_public_access_block&quot; &quot;app_data_pab&quot; {
+		24 |   bucket = aws_s3_bucket.app_data.id
+		25 | 
+		26 |   block_public_acls       = false
+		27 |   block_public_policy     = false
+		28 |   ignore_public_acls      = false
+		29 |   restrict_public_buckets = false
+		30 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_56] Ensure S3 bucket has 'restrict_public_buckets' enabled" classname="/s3.tf.aws_s3_bucket_public_access_block.app_data_pab" file="/s3.tf">
+			<failure type="failure" message="Ensure S3 bucket has 'restrict_public_buckets' enabled">
+Resource: aws_s3_bucket_public_access_block.app_data_pab
+File: /s3.tf: 23-30
+Guideline: None
+
+		23 | resource &quot;aws_s3_bucket_public_access_block&quot; &quot;app_data_pab&quot; {
+		24 |   bucket = aws_s3_bucket.app_data.id
+		25 | 
+		26 |   block_public_acls       = false
+		27 |   block_public_policy     = false
+		28 |   ignore_public_acls      = false
+		29 |   restrict_public_buckets = false
+		30 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_55] Ensure S3 bucket has ignore public ACLs enabled" classname="/s3.tf.aws_s3_bucket_public_access_block.app_data_pab" file="/s3.tf">
+			<failure type="failure" message="Ensure S3 bucket has ignore public ACLs enabled">
+Resource: aws_s3_bucket_public_access_block.app_data_pab
+File: /s3.tf: 23-30
+Guideline: None
+
+		23 | resource &quot;aws_s3_bucket_public_access_block&quot; &quot;app_data_pab&quot; {
+		24 |   bucket = aws_s3_bucket.app_data.id
+		25 | 
+		26 |   block_public_acls       = false
+		27 |   block_public_policy     = false
+		28 |   ignore_public_acls      = false
+		29 |   restrict_public_buckets = false
+		30 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV2_AWS_60] Ensure RDS instance with copy tags to snapshots is enabled" classname="/database.tf.aws_db_instance.app_db" file="/database.tf">
+			<failure type="failure" message="Ensure RDS instance with copy tags to snapshots is enabled">
+Resource: aws_db_instance.app_db
+File: /database.tf: 13-26
+Guideline: None
+
+		13 | resource &quot;aws_db_instance&quot; &quot;app_db&quot; {
+		14 |   identifier        = &quot;app-db-prod&quot;
+		15 |   engine            = &quot;postgres&quot;
+		16 |   engine_version    = &quot;15.4&quot;
+		17 |   instance_class    = &quot;db.t3.micro&quot;
+		18 |   allocated_storage = 20
+		19 | 
+		20 |   username = &quot;dbadmin&quot;
+		21 |   password = var.db_password # celowo literal w oryginale pracy — patrz variables.tf
+		22 | 
+		23 |   publicly_accessible = true
+		24 |   storage_encrypted   = false
+		25 |   skip_final_snapshot = true
+		26 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_18] Ensure the S3 bucket has access logging enabled" classname="/s3.tf.aws_s3_bucket.app_data" file="/s3.tf">
+			<failure type="failure" message="Ensure the S3 bucket has access logging enabled">
+Resource: aws_s3_bucket.app_data
+File: /s3.tf: 14-16
+Guideline: None
+
+		14 | resource &quot;aws_s3_bucket&quot; &quot;app_data&quot; {
+		15 |   bucket = &quot;acme-aplikacja-dane-prod&quot;
+		16 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV2_AWS_62] Ensure S3 buckets should have event notifications enabled" classname="/s3.tf.aws_s3_bucket.app_data" file="/s3.tf">
+			<failure type="failure" message="Ensure S3 buckets should have event notifications enabled">
+Resource: aws_s3_bucket.app_data
+File: /s3.tf: 14-16
+Guideline: None
+
+		14 | resource &quot;aws_s3_bucket&quot; &quot;app_data&quot; {
+		15 |   bucket = &quot;acme-aplikacja-dane-prod&quot;
+		16 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV2_AWS_11] Ensure VPC flow logging is enabled in all VPCs" classname="/network.tf.aws_vpc.main" file="/network.tf">
+			<failure type="failure" message="Ensure VPC flow logging is enabled in all VPCs">
+Resource: aws_vpc.main
+File: /network.tf: 7-15
+Guideline: None
+
+		7  | resource &quot;aws_vpc&quot; &quot;main&quot; {
+		8  |   cidr_block           = &quot;10.0.0.0/16&quot;
+		9  |   enable_dns_support   = true
+		10 |   enable_dns_hostnames = true
+		11 | 
+		12 |   tags = {
+		13 |     Name = &quot;acme-app-vpc&quot;
+		14 |   }
+		15 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV2_AWS_61] Ensure that an S3 bucket has a lifecycle configuration" classname="/s3.tf.aws_s3_bucket.app_data" file="/s3.tf">
+			<failure type="failure" message="Ensure that an S3 bucket has a lifecycle configuration">
+Resource: aws_s3_bucket.app_data
+File: /s3.tf: 14-16
+Guideline: None
+
+		14 | resource &quot;aws_s3_bucket&quot; &quot;app_data&quot; {
+		15 |   bucket = &quot;acme-aplikacja-dane-prod&quot;
+		16 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV2_AWS_30] Ensure Postgres RDS as aws_db_instance has Query Logging enabled" classname="/database.tf.aws_db_instance.app_db" file="/database.tf">
+			<failure type="failure" message="Ensure Postgres RDS as aws_db_instance has Query Logging enabled">
+Resource: aws_db_instance.app_db
+File: /database.tf: 13-26
+Guideline: None
+
+		13 | resource &quot;aws_db_instance&quot; &quot;app_db&quot; {
+		14 |   identifier        = &quot;app-db-prod&quot;
+		15 |   engine            = &quot;postgres&quot;
+		16 |   engine_version    = &quot;15.4&quot;
+		17 |   instance_class    = &quot;db.t3.micro&quot;
+		18 |   allocated_storage = 20
+		19 | 
+		20 |   username = &quot;dbadmin&quot;
+		21 |   password = var.db_password # celowo literal w oryginale pracy — patrz variables.tf
+		22 | 
+		23 |   publicly_accessible = true
+		24 |   storage_encrypted   = false
+		25 |   skip_final_snapshot = true
+		26 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV2_AWS_5] Ensure that Security Groups are attached to another resource" classname="/network.tf.aws_security_group.app" file="/network.tf">
+			<failure type="failure" message="Ensure that Security Groups are attached to another resource">
+Resource: aws_security_group.app
+File: /network.tf: 27-51
+Guideline: None
+
+		27 | resource &quot;aws_security_group&quot; &quot;app&quot; {
+		28 |   name   = &quot;app-sg&quot;
+		29 |   vpc_id = aws_vpc.main.id
+		30 | 
+		31 |   ingress {
+		32 |     from_port   = 22
+		33 |     to_port     = 22
+		34 |     protocol    = &quot;tcp&quot;
+		35 |     cidr_blocks = [&quot;0.0.0.0/0&quot;]
+		36 |   }
+		37 | 
+		38 |   ingress {
+		39 |     from_port   = 3389
+		40 |     to_port     = 3389
+		41 |     protocol    = &quot;tcp&quot;
+		42 |     cidr_blocks = [&quot;0.0.0.0/0&quot;]
+		43 |   }
+		44 | 
+		45 |   egress {
+		46 |     from_port   = 0
+		47 |     to_port     = 0
+		48 |     protocol    = &quot;-1&quot;
+		49 |     cidr_blocks = [&quot;0.0.0.0/0&quot;]
+		50 |   }
+		51 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV2_AWS_12] Ensure the default security group of every VPC restricts all traffic" classname="/network.tf.aws_vpc.main" file="/network.tf">
+			<failure type="failure" message="Ensure the default security group of every VPC restricts all traffic">
+Resource: aws_vpc.main
+File: /network.tf: 7-15
+Guideline: None
+
+		7  | resource &quot;aws_vpc&quot; &quot;main&quot; {
+		8  |   cidr_block           = &quot;10.0.0.0/16&quot;
+		9  |   enable_dns_support   = true
+		10 |   enable_dns_hostnames = true
+		11 | 
+		12 |   tags = {
+		13 |     Name = &quot;acme-app-vpc&quot;
+		14 |   }
+		15 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV2_AWS_56] Ensure AWS Managed IAMFullAccess IAM policy is not used." classname="/oidc.tf.aws_iam_role_policy_attachment.tf_apply_iam" file="/oidc.tf">
+			<failure type="failure" message="Ensure AWS Managed IAMFullAccess IAM policy is not used.">
+Resource: aws_iam_role_policy_attachment.tf_apply_iam
+File: /oidc.tf: 103-106
+Guideline: None
+
+		103 | resource &quot;aws_iam_role_policy_attachment&quot; &quot;tf_apply_iam&quot; {
+		104 |   role       = aws_iam_role.tf_apply_role.name
+		105 |   policy_arn = &quot;arn:aws:iam::aws:policy/IAMFullAccess&quot;
+		106 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_20] S3 Bucket has an ACL defined which allows public READ access." classname="/s3.tf.aws_s3_bucket.app_data" file="/s3.tf">
+			<failure type="failure" message="S3 Bucket has an ACL defined which allows public READ access.">
+Resource: aws_s3_bucket.app_data
+File: /s3.tf: 14-16
+Guideline: None
+
+		14 | resource &quot;aws_s3_bucket&quot; &quot;app_data&quot; {
+		15 |   bucket = &quot;acme-aplikacja-dane-prod&quot;
+		16 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV2_AWS_6] Ensure that S3 bucket has a Public Access block" classname="/s3.tf.aws_s3_bucket.app_data" file="/s3.tf">
+			<failure type="failure" message="Ensure that S3 bucket has a Public Access block">
+Resource: aws_s3_bucket.app_data
+File: /s3.tf: 14-16
+Guideline: None
+
+		14 | resource &quot;aws_s3_bucket&quot; &quot;app_data&quot; {
+		15 |   bucket = &quot;acme-aplikacja-dane-prod&quot;
+		16 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_21] Ensure all data stored in the S3 bucket have versioning enabled" classname="/s3.tf.aws_s3_bucket.app_data" file="/s3.tf">
+			<failure type="failure" message="Ensure all data stored in the S3 bucket have versioning enabled">
+Resource: aws_s3_bucket.app_data
+File: /s3.tf: 14-16
+Guideline: None
+
+		14 | resource &quot;aws_s3_bucket&quot; &quot;app_data&quot; {
+		15 |   bucket = &quot;acme-aplikacja-dane-prod&quot;
+		16 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV_AWS_145] Ensure that S3 buckets are encrypted with KMS by default" classname="/s3.tf.aws_s3_bucket.app_data" file="/s3.tf">
+			<failure type="failure" message="Ensure that S3 buckets are encrypted with KMS by default">
+Resource: aws_s3_bucket.app_data
+File: /s3.tf: 14-16
+Guideline: None
+
+		14 | resource &quot;aws_s3_bucket&quot; &quot;app_data&quot; {
+		15 |   bucket = &quot;acme-aplikacja-dane-prod&quot;
+		16 | }
+</failure>
+		</testcase>
+		<testcase name="[NONE][CKV2_AWS_40] Ensure AWS IAM policy does not allow full IAM privileges" classname="/iam.tf.aws_iam_role_policy.app_role_policy" file="/iam.tf">
+			<failure type="failure" message="Ensure AWS IAM policy does not allow full IAM privileges">
+Resource: aws_iam_role_policy.app_role_policy
+File: /iam.tf: 29-41
+Guideline: None
+
+		29 | resource &quot;aws_iam_role_policy&quot; &quot;app_role_policy&quot; {
+		30 |   name = &quot;app-full-access&quot;
+		31 |   role = aws_iam_role.app_role.id
+		32 | 
+		33 |   policy = jsonencode({
+		34 |     Version = &quot;2012-10-17&quot;
+		35 |     Statement = [{
+		36 |       Effect   = &quot;Allow&quot;
+		37 |       Action   = &quot;*&quot;
+		38 |       Resource = &quot;*&quot;
+		39 |     }]
+		40 |   })
+		41 | }
+</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

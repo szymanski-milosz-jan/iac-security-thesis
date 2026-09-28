@@ -1,0 +1,29 @@
+name: CD - Terraform Apply
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  terraform-apply:
+    runs-on: ubuntu-latest
+    environment: production # wymusza required reviewers (rozdz. 5.3.5)
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.10.5"
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_APPLY_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - run: terraform init -input=false
+      - run: terraform plan -input=false -out=tfplan.binary
+      - run: terraform apply -input=false -auto-approve tfplan.binary
