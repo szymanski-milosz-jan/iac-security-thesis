@@ -1,0 +1,9 @@
+checkov-results.sarif
+checkov-results.xml
+checkov-source.sarif
+checkov-plan.sarif
+tfplan.binary
+tfplan.json
+.terraform/
+*.tfstate
+*.tfstate.backup
